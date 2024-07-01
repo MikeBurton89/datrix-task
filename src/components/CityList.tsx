@@ -1,10 +1,7 @@
 import { useCityWeather } from "../contexts/CityWeatherContext";
 
 const CityList = () => {
-  const {
-    cities,
-    handleSelectCity,
-  } = useCityWeather();
+  const { cities, handleSelectCity, isLoading, error } = useCityWeather();
 
   return (
     <div className="overflow-auto scrollbar flex flex-col gap-4">
@@ -36,6 +33,8 @@ const CityList = () => {
             </article>
           </div>
         ))}
+      {isLoading ? <p>Loading cities...</p> : null}
+      {error ? <p>Error loading cities...</p> : null}
     </div>
   );
 };
