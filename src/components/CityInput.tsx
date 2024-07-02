@@ -3,14 +3,9 @@ import { IconSearch } from "../icons";
 import { useCityWeather } from "../contexts/CityWeatherContext";
 
 const CityInput = () => {
-    const {
-        city,
-        setCity,
-        isLoading,
-        refetchCity,
-        error,
-      } = useCityWeather();
-      const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setCity(e.target.value);
+  const { city, setCity, isLoading, refetchCity, error } = useCityWeather();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setCity(e.target.value);
 
   return (
     <span className="flex flex-row gap-2">
@@ -27,11 +22,19 @@ const CityInput = () => {
           <button
             onClick={() => refetchCity()}
             disabled={city === ""}
-            className="border-black border-2 disabled:bg-[#FFA6D6] bg-[#FFA6F6] hover:bg-[#fa8cef] active:bg-[#f774ea] w-12 h-12"
+            className="border-black border-2 disabled:bg-[#FFA6D6] bg-[#FFA6F6] hover:bg-[#fa8cef] active:bg-[#f774ea] w-12 h-12 flex items-center justify-center"
           >
             <IconSearch className="w-6 h-6" />
           </button>
-          {error && <p>Error: {error && error.message ? error.message : 'Something wrong happened'}</p>}
+
+          {error && (
+            <p>
+              Error:{" "}
+              {error && error.message
+                ? error.message
+                : "Something wrong happened"}
+            </p>
+          )}
         </>
       )}
     </span>
