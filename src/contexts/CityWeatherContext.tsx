@@ -8,6 +8,7 @@ interface CityWeatherContextProps {
   cities: CityDetails[];
   setCity: (city: string) => void;
   selectedCity?: CityDetails;
+  setSelectedCity: (city: CityDetails | undefined) => void;
   handleSelectCity: (city: CityDetails) => void;
   weatherData?: WeatherDetails;
   isLoading: boolean;
@@ -48,6 +49,7 @@ export const CityWeatherProvider: React.FC<{ children: React.ReactNode }> = ({ c
         city,
         setCity,
         selectedCity,
+        setSelectedCity,
         handleSelectCity,
         weatherData,
         isLoading,
