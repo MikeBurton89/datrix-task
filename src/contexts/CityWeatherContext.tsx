@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { CityDetails, WeatherDetails } from "../types";
 import { useFetchCity } from "../hooks/useFetchCity";
@@ -13,6 +14,7 @@ interface CityWeatherContextProps {
   weatherData?: WeatherDetails;
   isLoading: boolean;
   weatherIsLoading: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   error?: any;
   weatherError?: any;
   refetchCity: () => void;
@@ -42,23 +44,25 @@ export const CityWeatherProvider: React.FC<{ children: React.ReactNode }> = ({ c
     setSelectedCity(city);
   };
 
+  const contextValue = {
+    cities,
+    city,
+    setCity,
+    selectedCity,
+    setSelectedCity,
+    handleSelectCity,
+    weatherData,
+    isLoading,
+    weatherIsLoading,
+    error,
+    weatherError,
+    refetchCity: refetch,
+    refetchWeather: weatherRefetch,
+  };
+
   return (
     <CityWeatherContext.Provider
-      value={{
-        cities,
-        city,
-        setCity,
-        selectedCity,
-        setSelectedCity,
-        handleSelectCity,
-        weatherData,
-        isLoading,
-        weatherIsLoading,
-        error,
-        weatherError,
-        refetchCity: refetch,
-        refetchWeather: weatherRefetch,
-      }}
+      value={contextValue}
     >
       {children}
     </CityWeatherContext.Provider>

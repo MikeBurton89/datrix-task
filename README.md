@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# Datrix Task React Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple application that uses React and Vite to display the current weather in a city. The user can search for a city and the application will display a list of cities
+that match the search string and once the user selects a city the current weather will be shown.
 
-Currently, two official plugins are available:
+## Pre-requisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To run the application, you need to have Node.js installed on your machine. You can download Node.js from the following link: [Node.js](https://nodejs.org/en/)
+You can also use Yarn as an alternative to NPM. You can download Yarn from the following link: [Yarn](https://yarnpkg.com/)
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+To install the application, clone the repository move into the folder and run the following command:
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+using NPM:
+```bash
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+using Yarn:
+```bash
+yarn install
+```
+
+## Running the application
+
+To run the application, run the following command:
+
+using NPM:
+```bash
+npm run dev
+```
+
+using Yarn:
+```bash
+yarn dev
+```
+
+## Building the application
+
+To build the application, run the following command:
+
+using NPM:
+```bash
+npm run build
+```
+
+using Yarn:
+```bash
+yarn build
+```
+

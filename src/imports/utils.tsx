@@ -13,6 +13,9 @@ import {
   WiThunderstorm,
 } from "weather-icons-react";
 
+/**
+ * A mapping of weather icons based on their corresponding weather codes, that comes from the weather api
+ */
 export const weatherIconMap: Record<number, { description: string, icon: JSX.Element }> = {
   0: { description: "Clear sky", icon: <WiDaySunny size="10rem" color="black" /> },
   1: { description: "Mainly clear", icon: <WiDayCloudy size="10rem" color="black" /> },
@@ -45,8 +48,12 @@ export const weatherIconMap: Record<number, { description: string, icon: JSX.Ele
 };
 
 
+/**
+ * Formats a date string into a localized date and time string.
+ * @param date - The date string to format.
+ * @returns The formatted date and time string.
+ */
 export const formatDate = (date: string) => {
-  // format 2024-07-01T21:00 to 01 July 2024 21:00
   const dateObj = new Date(date);
   const options: Intl.DateTimeFormatOptions = {
     year: "numeric",
